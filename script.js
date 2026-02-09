@@ -37,4 +37,18 @@ var dates = [
   "2023/03/30",
 ];
 
+
+    let min = new Date(dates[0]);
+
+    for (let i = 1; i < dates.length; i++) {
+        let current = new Date(dates[i]);
+        if (current < min) {
+            min = current;
+        }
+    }
+
+    return min.toISOString().split("T")[0].replace(/-/g, "/");
+
+
+
 alert(minDate(dates));
